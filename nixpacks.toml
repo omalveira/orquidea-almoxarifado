@@ -2,19 +2,17 @@
 cmds = ["npm install"]
 
 [phases.build]
-cmds = [
-  "npm run build",
-  "npx tsc server.ts --module esnext --target es2020 --moduleResolution bundler --esModuleInterop true --skipLibCheck true --outDir dist-server"
-]
+cmds = ["npm run build"]
 
 [start]
-cmd = "node dist-server/server.js"
+cmd = "npm run start"
+
+[variables]
+NODE_VERSION = "20"
 ```
 
-**4.** Salve o arquivo (**Ctrl+S**)
-
-**5.** No terminal, rode novamente:
+Salva, e no terminal:
 ```
 git add nixpacks.toml
-git commit -m "corrige build server"
+git commit -m "fix: força Node.js 20"
 git push
