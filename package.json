@@ -1,4 +1,4 @@
-{
+﻿{
   "name": "orquidea-almoxarifado",
   "version": "1.0.0",
   "type": "module",
@@ -33,4 +33,3 @@
     "vite": "^6.2.0"
   }
 }
-```
