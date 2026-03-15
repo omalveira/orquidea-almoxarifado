@@ -1,5 +1,20 @@
+[phases.install]
+cmds = ["npm install"]
+
 [phases.build]
-cmds = ["npm install", "npm run build:all"]
+cmds = [
+  "npm run build",
+  "npx tsc server.ts --module esnext --target es2020 --moduleResolution bundler --esModuleInterop true --skipLibCheck true --outDir dist-server"
+]
 
 [start]
-cmd = "npm run start"
+cmd = "node dist-server/server.js"
+```
+
+**4.** Salve o arquivo (**Ctrl+S**)
+
+**5.** No terminal, rode novamente:
+```
+git add nixpacks.toml
+git commit -m "corrige build server"
+git push
