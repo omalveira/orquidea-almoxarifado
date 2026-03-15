@@ -1,0 +1,134 @@
+╔══════════════════════════════════════════════════════════════════╗
+║        ORQUIDEA - Guia de Publicação no Railway                  ║
+║              Sistema de Almoxarifado Online                      ║
+╚══════════════════════════════════════════════════════════════════╝
+
+Após seguir este guia, o sistema ficará disponível 24h por dia
+em um link como: https://orquidea-producao.up.railway.app
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  PARTE 1 — CRIAR CONTA NO GITHUB (repositório do código)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  1. Acesse: https://github.com
+  2. Clique em "Sign up" e crie uma conta gratuita
+  3. Confirme o e-mail
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  PARTE 2 — ENVIAR O CÓDIGO PARA O GITHUB
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  1. Acesse: https://github.com/new
+  2. Em "Repository name" coloque: orquidea-almoxarifado
+  3. Selecione "Private" (só você verá o código)
+  4. Clique em "Create repository"
+
+  5. Instale o Git no computador (se não tiver):
+     https://git-scm.com/download/win
+     → Instale com as opções padrão
+
+  6. Abra o CMD dentro da pasta "orquidea-railway":
+     → Clique com botão direito dentro da pasta
+     → "Abrir no Terminal" ou "Abrir janela de comando aqui"
+
+  7. Digite estes comandos um por um (Enter após cada um):
+
+     git init
+     git add .
+     git commit -m "primeiro envio"
+     git branch -M main
+     git remote add origin https://github.com/SEU_USUARIO/orquidea-almoxarifado.git
+     git push -u origin main
+
+     ⚠️ Substitua SEU_USUARIO pelo seu nome de usuário do GitHub
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  PARTE 3 — CRIAR CONTA NO RAILWAY
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  1. Acesse: https://railway.app
+  2. Clique em "Login" → "Login with GitHub"
+  3. Autorize o Railway a acessar sua conta do GitHub
+  4. Pronto, conta criada!
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  PARTE 4 — CRIAR O PROJETO NO RAILWAY
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  1. No Railway, clique em "New Project"
+  2. Clique em "Deploy from GitHub repo"
+  3. Selecione o repositório: orquidea-almoxarifado
+  4. Clique em "Deploy Now"
+  5. O Railway vai começar a configurar (aguarde ~2 minutos)
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  PARTE 5 — ADICIONAR O BANCO DE DADOS PostgreSQL
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  ⚠️ Esta é a etapa mais importante! Sem isso os dados não salvam.
+
+  1. Dentro do seu projeto no Railway,
+     clique em "+ New" (botão no canto superior direito)
+  2. Clique em "Database"
+  3. Clique em "PostgreSQL"
+  4. Aguarde o banco ser criado (~1 minuto)
+
+  5. Clique no serviço do PostgreSQL que apareceu
+  6. Vá na aba "Variables"
+  7. Copie o valor de "DATABASE_URL"
+
+  8. Clique no serviço da sua aplicação (orquidea-almoxarifado)
+  9. Vá em "Variables"
+  10. Clique em "New Variable"
+  11. Nome: DATABASE_URL
+      Valor: cole o que você copiou no passo 7
+  12. Clique em "Add"
+
+  O sistema vai reiniciar automaticamente com o banco conectado!
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  PARTE 6 — PEGAR O LINK DO SISTEMA
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  1. Clique no serviço da aplicação
+  2. Vá na aba "Settings"
+  3. Em "Domains", clique em "Generate Domain"
+  4. Vai aparecer um link como:
+     https://orquidea-almoxarifado-producao.up.railway.app
+
+  5. Compartilhe esse link com todos que precisam acessar!
+     Funciona em qualquer computador, celular ou tablet.
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  SOBRE O PLANO GRATUITO DO RAILWAY
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  ✔ $5 de crédito gratuito por mês (suficiente para uso leve)
+  ✔ PostgreSQL gratuito com 1GB de armazenamento
+  ✔ Os dados ficam salvos permanentemente
+  ✔ O sistema fica online 24h por dia
+  ⚠ Se ultrapassar o limite, o plano Hobby custa ~$5/mês (~R$30)
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  PROBLEMAS? DICAS RÁPIDAS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  ❌ Deploy falhou
+     → Clique no serviço → aba "Deployments" → clique no deploy
+       com erro → veja o log para identificar o problema
+
+  ❌ Site abre mas dá erro ao salvar
+     → Verifique se o DATABASE_URL foi configurado corretamente
+       na Parte 5
+
+  ❌ Site não abre
+     → Aguarde mais 2-3 minutos, o primeiro deploy demora um pouco
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
