@@ -261,7 +261,7 @@ async function startServer() {
     });
   }
 
-  const PORT = parseInt(process.env.PORT || '3000');
+  const PORT = parseInt(process.env.PORT || '8080');
   app.listen(PORT, '0.0.0.0', () => {
     console.log(`Orquidea rodando na porta ${PORT}`);
   });
